@@ -110,7 +110,7 @@ public class Gui extends javax.swing.JFrame {
         } else {
             jTextPane2.setText("It is NOT a Palindrome");
         }
-        jTextPane3.setText(showStats(stringStats(s)));//put the stats into the 
+        jTextPane3.setText(showStats(stringStats(s)));//put the stats into the stats text box 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -149,8 +149,8 @@ public class Gui extends javax.swing.JFrame {
     }
 
     public boolean isPalindrome(String s) {
-        s = s.toLowerCase().trim();
-        s = s.replaceAll("[^a-zA-Z\\s]", "");
+        s = s.toLowerCase().trim();//convert to lowercase and remove the whitespaces
+        s = s.replaceAll("[^a-zA-Z\\s]", "");//remove the special characters
         if (s.equals(""))//whitespaces are not palindromes
         {
             return false;
@@ -189,7 +189,7 @@ public class Gui extends javax.swing.JFrame {
     private int countAlpha(String s) {
         int count = 0;
         for (int i = 0; i < s.length(); i++) {
-            if (Character.isAlphabetic(s.codePointAt(i))) {
+            if (Character.isAlphabetic(s.codePointAt(i))) {//test each character
                 count++;
             }
         }
